@@ -391,40 +391,37 @@ def result_card(title, result, description):
 # 10. WEBSITE HEADER
 # ================================================================
 
-st.markdown("""
-<div class="hero">
 
-    <div class="hero-small">
-        MODEL-GUIDED MICROALGAE CULTIVATION
+# ================================================================
+# 10. WEBSITE HEADER
+# ================================================================
+
+st.markdown(
+    """
+    <div class="hero">
+        <div class="hero-small">
+            MODEL-GUIDED MICROALGAE CULTIVATION
+        </div>
+
+        <div class="hero-title">
+            ALGORA
+        </div>
+
+        <div class="hero-subtitle">
+            Predict. Optimise. Validate.
+        </div>
+
+        <div class="hero-small" style="margin-top:22px;">
+            MATHEMATICAL MODELLING
+            &nbsp; • &nbsp;
+            SUSTAINABILITY
+            &nbsp; • &nbsp;
+            MICROALGAE
+        </div>
     </div>
-
-    <div class="hero-title">
-        ALGORA
-    </div>
-
-    <div class="hero-subtitle">
-        Predict. Optimise. Validate.
-    </div>
-
-    <div class="hero-small" style="margin-top:22px;">
-        MATHEMATICAL MODELLING
-        &nbsp; • &nbsp;
-        SUSTAINABILITY
-        &nbsp; • &nbsp;
-        MICROALGAE
-    </div>
-
-</div>
-""", unsafe_allow_html=True)
-
-
-st.markdown("""
-Explore how environmental conditions influence
-microalgal growth and electricity consumption.
-""")
-
-st.divider()
-
+    """,
+    unsafe_allow_html=True
+)
 
 # ================================================================
 # 11. ENVIRONMENTAL INPUTS
