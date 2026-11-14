@@ -14,7 +14,7 @@ import plotly.graph_objects as go
 # ================================================================
 
 st.set_page_config(
-    page_title="algora | Microalgae Optimiser",
+    page_title="algora | microalgae optimiser",
     page_icon="🌲",
     layout="wide"
 )
@@ -418,7 +418,7 @@ ALGORA
 </div>
 
 <div style="color: #D6E9DF; font-size: 20px; margin-top: 8px;">
-Predict. Optimise. Validate.
+Algal Growth Optimisation and Resource Analysis
 </div>
 
 <div style="color: #B9D8C7; font-size: 11px; letter-spacing: 2px; margin-top: 25px;">
