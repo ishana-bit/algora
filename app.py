@@ -15,7 +15,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(
     page_title="ALGORA | Microalgae Optimiser",
-    page_icon="★",
+    page_icon="🌲",
     layout="wide"
 )
 
@@ -131,6 +131,21 @@ div.stButton > button:hover {
     background-color: #174c3c;
     color: white;
     border: none;
+}
+
+/* ALGORA SLIDER COLOURS */
+
+div[data-testid="stSlider"] [role="slider"] {
+    background-color: #55A6D9 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+div[data-testid="stSlider"] [data-baseweb="slider"] > div > div {
+    background-color: #55A6D9 !important;
+}
+
+div[data-testid="stSlider"] div[role="slider"] {
+    box-shadow: 0 0 0 3px rgba(85, 166, 217, 0.2) !important;
 }
 
 </style>
@@ -391,15 +406,52 @@ def result_card(title, result, description):
 # 10. WEBSITE HEADER
 # ================================================================
 
-st.caption("M O D E L - G U I D E D   M I C R O A L G A E   C U L T I V A T I O N")
+st.markdown("""
+<div style="
+    background: linear-gradient(120deg, #123D32, #246B55);
+    padding: 38px 35px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    text-align: left;
+">
+    <div style="
+        color: #B9D8C7;
+        font-size: 13px;
+        letter-spacing: 5px;
+        font-weight: 600;
+        margin-bottom: 18px;
+    ">
+        MODEL-GUIDED MICROALGAE CULTIVATION
+    </div>
 
-st.title("ALGORA")
+    <div style="
+        color: #FFFFFF;
+        font-size: 58px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        line-height: 1.2;
+    ">
+        ALGORA
+    </div>
 
-st.subheader("Predict. Optimise. Validate.")
+    <div style="
+        color: #D6E9DF;
+        font-size: 20px;
+        margin-top: 8px;
+    ">
+        Predict. Optimise. Validate.
+    </div>
 
-st.caption("MATHEMATICAL MODELLING  •  SUSTAINABILITY  •  MICROALGAE")
-
-st.divider()
+    <div style="
+        color: #B9D8C7;
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-top: 25px;
+    ">
+        MATHEMATICAL MODELLING &nbsp; • &nbsp; SUSTAINABILITY &nbsp; • &nbsp; MICROALGAE
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # ================================================================
 # 11. ENVIRONMENTAL INPUTS
