@@ -585,30 +585,32 @@ if st.button(
 
     st.success("Optimisation complete.")
 
-left, right = st.columns(2, gap="large")
+    left, right = st.columns(2, gap="large")
 
-with left:
-    with st.container(border=True):
-        result_card(
-            "OPTIMUM A | MAXIMUM BIOMASS",
-            growth,
-            "Conditions predicted to produce the greatest final biomass."
-        )
+    with left:
 
-with right:
-    with st.container(border=True):
-        result_card(
-            "OPTIMUM B | MAXIMUM ENERGY EFFICIENCY",
-            efficiency,
-            "Conditions predicted to produce the most biomass per kWh."
-        )
+        with st.container(border=True):
+
+            result_card(
+                "OPTIMUM A | MAXIMUM BIOMASS",
+                growth,
+                "Conditions predicted to produce the greatest final biomass."
+            )
+
+    with right:
+
+        with st.container(border=True):
+
+            result_card(
+                "OPTIMUM B | MAXIMUM ENERGY EFFICIENCY",
+                efficiency,
+                "Conditions predicted to produce the most biomass per kWh."
+            )
 
     st.caption(
         "These are model predictions within the selected search ranges, "
         "not experimentally verified optima."
     )
-
-
 # ================================================================
 # 14. EXPERIMENTAL VALIDATION
 # ================================================================
