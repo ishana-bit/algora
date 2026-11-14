@@ -585,7 +585,7 @@ if st.button(
 
     st.success("Optimisation complete.")
 
- left, right = st.columns(2, gap="large")
+left, right = st.columns(2, gap="large")
 
 with left:
     with st.container(border=True):
