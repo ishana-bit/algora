@@ -362,62 +362,22 @@ def optimise_conditions(days, power):
 
 def result_card(title, result, description):
 
-    return f"""
-    <div style="
-        background: linear-gradient(145deg, #E8F1E8, #DCEBDD);
-        border: 1px solid #B8D2BE;
-        border-left: 6px solid #43865E;
-        border-radius: 14px;
-        padding: 24px;
-        margin-bottom: 15px;
-        color: #20392B;
-        min-height: 340px;
-        box-shadow: 0 3px 12px rgba(30, 70, 45, 0.07);
-    ">
+    st.markdown(f"### {title}")
+    st.caption(description)
 
-        <div style="
-            color: #43865E;
-            font-size: 12px;
-            letter-spacing: 2px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        ">
-            {title}
-        </div>
+    st.metric(
+        "Predicted biomass",
+        f"{result['biomass']:.4f}"
+    )
 
-        <div style="
-            color: #45604D;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        ">
-            {description}
-        </div>
+    st.write(f"**Light intensity:** {result['ppfd']} PPFD")
+    st.write(f"**Light duration:** {result['hours']} hours/day")
+    st.write(f"**Temperature:** {result['temp']} °C")
+    st.write(f"**Growth rate:** {result['growth_rate']:.4f} day⁻¹")
+    st.write(f"**Electricity:** {result['energy']:.4f} kWh")
+    st.write(f"**Energy efficiency:** {result['efficiency']:.4f} relative units/kWh")
 
-        <div style="
-            font-size: 14px;
-            line-height: 2.1;
-            color: #20392B;
-        ">
-
-            <b>Light intensity:</b> {result['ppfd']} PPFD<br>
-
-            <b>Light duration:</b> {result['hours']} hours/day<br>
-
-            <b>Temperature:</b> {result['temp']} °C<br>
-
-            <b>Predicted biomass:</b> {result['biomass']:.4f}<br>
-
-            <b>Growth rate:</b> {result['growth_rate']:.4f} day⁻¹<br>
-
-            <b>Electricity:</b> {result['energy']:.4f} kWh<br>
-
-            <b>Energy efficiency:</b> {result['efficiency']:.4f} relative units/kWh
-
-        </div>
-
-    </div>
-    """
+    st.divider()
 
 # ================================================================
 # 10. WEBSITE HEADER
@@ -625,28 +585,22 @@ if st.button(
 
     st.success("Optimisation complete.")
 
-    left, right = st.columns(2, gap="large")
+ left, right = st.columns(2, gap="large")
 
-    with left:
-
-        st.markdown(
-            result_card(
-                "OPTIMUM A | MAXIMUM BIOMASS",
-                growth,
-                "Conditions predicted to produce the greatest final biomass."
-            ),
-            unsafe_allow_html=True
+with left:
+    with st.container(border=True):
+        result_card(
+            "OPTIMUM A | MAXIMUM BIOMASS",
+            growth,
+            "Conditions predicted to produce the greatest final biomass."
         )
 
-    with right:
-
-        st.markdown(
-            result_card(
-                "OPTIMUM B | MAXIMUM ENERGY EFFICIENCY",
-                efficiency,
-                "Conditions predicted to produce the most biomass per kWh."
-            ),
-            unsafe_allow_html=True
+with right:
+    with st.container(border=True):
+        result_card(
+            "OPTIMUM B | MAXIMUM ENERGY EFFICIENCY",
+            efficiency,
+            "Conditions predicted to produce the most biomass per kWh."
         )
 
     st.caption(
