@@ -414,7 +414,7 @@ MODEL-GUIDED MICROALGAE CULTIVATION
 </div>
 
 <div style="color: #FFFFFF; font-size: 58px; font-weight: 800; letter-spacing: 3px; line-height: 1.2;">
-ALGORA
+A.L.G.O.R.A
 </div>
 
 <div style="color: #D6E9DF; font-size: 20px; margin-top: 8px;">
