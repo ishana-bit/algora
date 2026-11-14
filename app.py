@@ -391,37 +391,15 @@ def result_card(title, result, description):
 # 10. WEBSITE HEADER
 # ================================================================
 
+st.caption("M O D E L - G U I D E D   M I C R O A L G A E   C U L T I V A T I O N")
 
-# ================================================================
-# 10. WEBSITE HEADER
-# ================================================================
+st.title("ALGORA")
 
-st.markdown(
-    """
-    <div class="hero">
-        <div class="hero-small">
-            MODEL-GUIDED MICROALGAE CULTIVATION
-        </div>
+st.subheader("Predict. Optimise. Validate.")
 
-        <div class="hero-title">
-            ALGORA
-        </div>
+st.caption("MATHEMATICAL MODELLING  •  SUSTAINABILITY  •  MICROALGAE")
 
-        <div class="hero-subtitle">
-            Predict. Optimise. Validate.
-        </div>
-
-        <div class="hero-small" style="margin-top:22px;">
-            MATHEMATICAL MODELLING
-            &nbsp; • &nbsp;
-            SUSTAINABILITY
-            &nbsp; • &nbsp;
-            MICROALGAE
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.divider()
 
 # ================================================================
 # 11. ENVIRONMENTAL INPUTS
