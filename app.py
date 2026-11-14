@@ -363,44 +363,61 @@ def optimise_conditions(days, power):
 def result_card(title, result, description):
 
     return f"""
-    <div class="result-card">
+    <div style="
+        background: linear-gradient(145deg, #E8F1E8, #DCEBDD);
+        border: 1px solid #B8D2BE;
+        border-left: 6px solid #43865E;
+        border-radius: 14px;
+        padding: 24px;
+        margin-bottom: 15px;
+        color: #20392B;
+        min-height: 340px;
+        box-shadow: 0 3px 12px rgba(30, 70, 45, 0.07);
+    ">
 
-        <div class="result-heading">
+        <div style="
+            color: #43865E;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        ">
             {title}
         </div>
 
-        <div class="result-description">
+        <div style="
+            color: #45604D;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        ">
             {description}
         </div>
 
-        <div class="result-value">
+        <div style="
+            font-size: 14px;
+            line-height: 2.1;
+            color: #20392B;
+        ">
 
-            <b>Light intensity:</b>
-            {result['ppfd']} PPFD<br>
+            <b>Light intensity:</b> {result['ppfd']} PPFD<br>
 
-            <b>Light duration:</b>
-            {result['hours']} hours/day<br>
+            <b>Light duration:</b> {result['hours']} hours/day<br>
 
-            <b>Temperature:</b>
-            {result['temp']} °C<br>
+            <b>Temperature:</b> {result['temp']} °C<br>
 
-            <b>Predicted biomass:</b>
-            {result['biomass']:.4f}<br>
+            <b>Predicted biomass:</b> {result['biomass']:.4f}<br>
 
-            <b>Growth rate:</b>
-            {result['growth_rate']:.4f} day⁻¹<br>
+            <b>Growth rate:</b> {result['growth_rate']:.4f} day⁻¹<br>
 
-            <b>Electricity:</b>
-            {result['energy']:.4f} kWh<br>
+            <b>Electricity:</b> {result['energy']:.4f} kWh<br>
 
-            <b>Energy efficiency:</b>
-            {result['efficiency']:.4f} relative units/kWh
+            <b>Energy efficiency:</b> {result['efficiency']:.4f} relative units/kWh
 
         </div>
 
     </div>
     """
-
 
 # ================================================================
 # 10. WEBSITE HEADER
@@ -608,7 +625,7 @@ if st.button(
 
     st.success("Optimisation complete.")
 
-    left, right = st.columns(2)
+    left, right = st.columns(2, gap="large")
 
     with left:
 
